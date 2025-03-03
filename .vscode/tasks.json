@@ -1,0 +1,70 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+    {
+      "type": "cmake",
+      "label": "Build",
+      "detail": "CMake build task.",
+
+      "command": "build",
+
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": false,
+        "reveal": "silent",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "Install",
+      "detail": "CMake install task.",
+
+      "command": "/usr/bin/pkexec",
+      "args": [
+        "${config:cmake.cmakePath}",
+        "--install",
+        "${command:cmake.buildDirectory}",
+        "--config",
+        "${command:cmake.buildType}"
+      ],
+
+      "presentation": {
+        "echo": false,
+        "reveal": "silent",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "Uninstall",
+      "detail": "CMake uninstall task.",
+
+      "command": "/usr/bin/pkexec",
+      "args": [
+        "${config:cmake.cmakePath}",
+        "--build",
+        "${command:cmake.buildDirectory}",
+        "--config",
+        "${command:cmake.buildType}",
+        "--target",
+        "uninstall"
+      ],
+
+      "presentation": {
+        "echo": false,
+        "reveal": "silent",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}

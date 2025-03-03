@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch email-client",
+      "type": "cppdbg",
+      "request": "launch",
+
+      "preLaunchTask": "Build",
+      "program": "${command:cmake.launchTargetPath}",
+      "args": [],
+      "cwd": "${workspaceRoot}",
+      "environment": [
+        // { "name": "GTK_DEBUG", "value": "all"},
+      ],
+
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

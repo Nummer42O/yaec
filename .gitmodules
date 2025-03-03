@@ -1,0 +1,3 @@
+[submodule "src/3rd/mailio"]
+	path = src/3rd/mailio
+	url = git@github.com:karastojko/mailio.git
